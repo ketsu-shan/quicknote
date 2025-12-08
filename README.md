@@ -80,3 +80,15 @@ MIT License - 详见 [LICENSE](LICENSE) 文件
 <p align="center">
   Made with ❤️ for productivity
 </p>
+
+## ⚠️ 安装问题
+
+### "已损坏，无法打开" 解决方法
+
+由于应用未经 Apple 签名，首次打开可能被阻止。请在终端运行：
+
+```bash
+xattr -cr /Applications/QuickNote.app
+```
+
+或者：按住 Control 键点击应用 → 选择"打开" → 确认打开
