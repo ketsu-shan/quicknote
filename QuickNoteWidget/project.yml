@@ -1,0 +1,47 @@
+name: QuickNoteWidget
+options:
+  bundleIdPrefix: com.quicknote
+  deploymentTarget:
+    macOS: "14.0"
+
+targets:
+  QuickNoteWidget:
+    type: application
+    platform: macOS
+    sources:
+      - QuickNoteWidget
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: com.quicknote.widget
+        PRODUCT_NAME: QuickNote Widget
+        MACOSX_DEPLOYMENT_TARGET: "14.0"
+        INFOPLIST_KEY_CFBundleDisplayName: QuickNote Widget
+        INFOPLIST_KEY_LSApplicationCategoryType: public.app-category.productivity
+        GENERATE_INFOPLIST_FILE: YES
+        SWIFT_VERSION: "5.9"
+        CODE_SIGN_STYLE: Automatic
+
+  QuickNoteWidgetExtension:
+    type: app-extension
+    platform: macOS
+    sources:
+      - QuickNoteWidgetExtension
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: com.quicknote.widget.extension
+        PRODUCT_NAME: QuickNoteWidgetExtension
+        MACOSX_DEPLOYMENT_TARGET: "14.0"
+        GENERATE_INFOPLIST_FILE: YES
+        INFOPLIST_KEY_CFBundleDisplayName: QuickNote
+        INFOPLIST_KEY_NSHumanReadableCopyright: ""
+        SWIFT_VERSION: "5.9"
+        CODE_SIGN_STYLE: Automatic
+        LD_RUNPATH_SEARCH_PATHS: "$(inherited) @executable_path/../Frameworks @executable_path/../../../../Frameworks"
+    dependencies:
+      - target: QuickNoteWidget
+        embed: false
+    info:
+      path: QuickNoteWidgetExtension/Info.plist
+      properties:
+        NSExtension:
+          NSExtensionPointIdentifier: com.apple.widgetkit-extension

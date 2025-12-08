@@ -1,0 +1,36 @@
+# Dependencies
+node_modules/
+
+# Build outputs
+dist/
+release/
+*.dmg
+*.blockmap
+
+# Electron builder
+.electron-builder
+
+# IDE
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# macOS
+.DS_Store
+*.app
+
+# Logs
+*.log
+npm-debug.log*
+
+# Environment
+.env
+.env.local
+.env.*.local
+
+# Swift/Xcode
+QuickNoteWidget/build/
+QuickNoteWidget/*.xcodeproj/xcuserdata/
+QuickNoteWidget/*.xcodeproj/project.xcworkspace/xcuserdata/
+*.dSYM
